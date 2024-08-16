@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +33,8 @@
         	width: 1300px;
         }
         img{
-        	width: 180px;
-        	height: 80px;
+        	width: 300px;
+        	height: 200px;
         	
         }
 	</style>
@@ -106,7 +107,8 @@ function calculateDifferences() {
         // 如果不是第二列，则计算差值  
         if (index > 0) {  
             // 获取前一列的输入值  
-            const prevInputValue = row2Cells[index - 1].querySelector('input').valueAsNumber;  
+            const prevInputValue = row2Cells[0].querySelector('input').valueAsNumber; 
+//          console.log("第一个值:", prevInputValue);  
             // 计算差值  
             const difference = inputValue - prevInputValue;  
             // 将差值设置到第三行的对应单元格中  
@@ -126,7 +128,7 @@ function calculateDifferences() {
         // 如果不是第二列，则计算差值  
         if (index > 0) {  
             // 获取前一列的输入值  
-            const prevInputValue = row3Cells[index - 1].querySelector('input').valueAsNumber;  
+            const prevInputValue = row3Cells[0].querySelector('input').valueAsNumber;  
             // 计算差值  
             const difference = inputValue - prevInputValue;  
             // 将差值设置到第三行的对应单元格中  
@@ -177,6 +179,66 @@ function getColumnData3() {
     document.getElementById("demo3").innerHTML = aab;
    
 }
+
+//function combineArraysTo2DArray(arr1, arr2) {  
+//// 使用Math.min来获取两个数组长度的最小值，确保不会因为长度不匹配而出错  
+//const length = Math.min(arr1.length, arr2.length);  
+//
+//// 使用map遍历较短数组的长度，并构建二维数组  
+//return Array.from({ length }, (_, index) => [x: arr1[index], y: arr2[index]]);  
+//}
+//const dataPoints = combineArraysTo2DArray(arr1, arr2); 
+////		const dataPoints = [  
+////		    { x: 1, y: 2 },  
+////		    { x: 2, y: 4 },  
+////		    { x: 3, y: 5 },  
+////		    { x: 4, y: 6 },  
+////		    { x: 5, y: 8 }  
+////		];  
+//		  
+//		// 计算一次函数（线性回归）  
+//		function linearRegression(points) {  
+//		    let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;  
+//		    points.forEach(p => {  
+//		        sumX += p.x;  
+//		        sumY += p.y;  
+//		        sumXY += p.x * p.y;  
+//		        sumXX += p.x * p.x;  
+//		    });  
+//		      
+//		    const n = points.length;  
+//		    const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);  
+//		    const intercept = (sumY - slope * sumX) / n;  
+//		    return { slope, intercept };  
+//		}  
+//		  
+//		// 绘图函数  
+//		function drawChart(canvasId, points, line) {  
+//		    const canvas = document.getElementById(canvasId);  
+//		    const ctx = canvas.getContext('2d');  
+//		  
+//		    // 清除画布  
+//		    ctx.clearRect(0, 0, canvas.width, canvas.height);  
+//		  
+//		    // 绘制数据点  
+//		    points.forEach(p => {  
+//		        ctx.beginPath();  
+//		        ctx.arc(p.x * 50 + 50, canvas.height - p.y * 20, 5, 0, 2 * Math.PI);  
+//		        ctx.fillStyle = 'blue';  
+//		        ctx.fill();  
+//		        ctx.closePath();  
+//		    });  
+//		  
+//		// drawAxes() ;
+//		    // 绘制线性回归线  
+//		    ctx.beginPath();  
+//		    ctx.moveTo(50, canvas.height - line.intercept * 20);  
+//		    ctx.lineTo(canvas.width - 50, canvas.height - (line.slope * (canvas.width / 50 - 1) + line.intercept) * 20);  
+//		    ctx.strokeStyle = 'red';  
+//		    ctx.stroke();  
+//		    ctx.closePath();  
+//		}
+
 </script>  
 </head>  
 <body>  
@@ -317,9 +379,10 @@ function getColumnData3() {
   
   <div class="result">
   	<p>-----------------------------------------</p>
-  	<img src="3.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<img src="1.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<img src="2.png" />
+  	<hr /><br />
+ <!--  	<img src="img/3.png" />-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<img src="img/1.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--  	<img src="img/2.png" />-->
   	<p> M= <span id="demo">?</span> .
   		<button onclick="getColumnData()">显示答案</button>  
   	</p>

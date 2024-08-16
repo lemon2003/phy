@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>表格的行属性</title>
+	<title>金属线膨胀系数计算</title>
 	<style>
 		input {
 	        /*border: 0; */
@@ -49,6 +49,7 @@
 	let aa=0;
 	let kk;
 	let c;
+	var wa;
 function calculateAverages() {  
     // 获取表格中所有行（除了表头）  
     const rows = document.querySelectorAll('.table1 tr:not(:first-child)');  
@@ -112,7 +113,7 @@ function calculateDifferences() {
             // 计算差值  
             const difference = inputValue - prevInputValue;  
             // 将差值设置到第三行的对应单元格中  
-            row4Cells[index].querySelector('input').value = difference; 
+            row4Cells[index].querySelector('input').value = difference.toFixed(2); 
             ii=ii+1;
             arr1[ii]=difference;
         } else {  
@@ -132,7 +133,7 @@ function calculateDifferences() {
             // 计算差值  
             const difference = inputValue - prevInputValue;  
             // 将差值设置到第三行的对应单元格中  
-            row5Cells[index].querySelector('input').value = difference; 
+            row5Cells[index].querySelector('input').value = difference.toFixed(2); 
             aa=aa+1;
             arr2[aa]=difference;
         } else {  
@@ -149,8 +150,8 @@ function getColumnData() {
 	console.log("a:", a);  
     console.log("b:", b);  
     console.log("c:", c);
-    var wa=2*b/a;
-    document.getElementById("demo").innerHTML = wa;
+    wa=2*b/a;
+//  document.getElementById("demo").innerHTML = wa;
    
 }  
 
@@ -169,13 +170,15 @@ function getColumnData2() {
 	console.log(arr1); // 输出第四行的数据  
 	console.log(arr2); // 输出第五行的数据
 	kk=result1/result2;
-    document.getElementById("demo2").innerHTML = kk;
+//  document.getElementById("demo2").innerHTML = kk;
    
 } 
 
 function getColumnData3() {  
-	
+	getColumnData();
+	getColumnData2();
 	let aab=kk/c;
+	aab=aab/wa;
     document.getElementById("demo3").innerHTML = aab;
    
 }
@@ -276,7 +279,7 @@ function getColumnData3() {
         <td><input type="text" readonly></td>  
     </tr>  
     <tr>  
-        <td style="font-size:20px;">L</td>  
+        <td style="font-size:20px;">L<span style="font-size: 10px;">0</span></td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
@@ -324,7 +327,7 @@ function getColumnData3() {
 	        <td><input type="number"></td>  
 	    </tr>  
 	    <tr>  
-	        <td style="font-size:20px;">t</td>  
+	        <td style="font-size:20px;">T</td>  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
@@ -356,7 +359,7 @@ function getColumnData3() {
 	        <td><input type="number"></td>
 	    </tr>
 	    <tr>  
-	        <td style="font-size:20px;">▲t</td>  
+	        <td style="font-size:20px;">▲T</td>  
 	        <td><input type="number" readonly value="0"></td> <!-- 第三行第二列直接设为0且只读 -->  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
@@ -378,19 +381,20 @@ function getColumnData3() {
   </div>
   
   <div class="result">
-  	<p>-----------------------------------------</p>
+<!--  	<p>-----------------------------------------</p>-->
+<br /><br /><br />
   	<hr /><br />
  <!--  	<img src="img/3.png" />-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<img src="1.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<img src="img/1.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!--  	<img src="img/2.png" />-->
-  	<p> M= <span id="demo">?</span> .
+  	<!--<p> M= <span id="demo">?</span> .
   		<button onclick="getColumnData()">显示答案</button>  
   	</p>
   	
   	<p> K= <span id="demo2"> ?</span> .
   		<button onclick="getColumnData2()">显示答案</button>
   	</p>
-  	
+  	-->
   	<p> α= <span id="demo3"> ?</span> .
   		<button onclick="getColumnData3()">显示答案</button>
   	</p>

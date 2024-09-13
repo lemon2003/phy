@@ -9,10 +9,11 @@
 	<style>
 		input {
 	        /*border: 0; */
-	       border: 1px red; 
+	        border: 1px red; 
 	        outline: none;
 	        background-color: rgba(0,0,0,0);
 	        width: 90px;
+	        font-size: 30px;
 	 		}
 	 	input::-webkit-outer-spin-button,
 		input::-webkit-inner-spin-button {
@@ -28,6 +29,7 @@
         	margin: 20px;
         	margin-right: 50px;
         	float: right;
+        	font-size: 30px;
         }
         body{
         	width: 1300px;
@@ -36,6 +38,9 @@
         	width: 300px;
         	height: 200px;
         	
+        }
+        th{
+        	font-size: 30px;
         }
 	</style>
 <script>  
@@ -246,7 +251,7 @@ function getColumnData3() {
 </head>  
 <body>  
   
-<h2>平均值计算表格</h2>  
+<h1>平均值计算表格</h1>  
 <table border="2" align="center" class="table1">  
     <tr>  
         <th>  </th>  
@@ -259,7 +264,7 @@ function getColumnData3() {
         <th>平均值</th>  
     </tr>  
     <tr>  
-        <td style="font-size:20px;">d</td>  
+        <td style="font-size:30px;">d</td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
@@ -269,7 +274,7 @@ function getColumnData3() {
         <td><input type="text" readonly></td>  
     </tr>  
     <tr>  
-        <td style="font-size:20px;">D</td>  
+        <td style="font-size:30px;">D</td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
@@ -279,7 +284,7 @@ function getColumnData3() {
         <td><input type="text" readonly></td>  
     </tr>  
     <tr>  
-        <td style="font-size:20px;">L<span style="font-size: 10px;">0</span></td>  
+        <td style="font-size:30px;">L<span style="font-size: 10px;">0</span></td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
         <td><input type="number"></td>  
@@ -292,7 +297,7 @@ function getColumnData3() {
 <button onclick="calculateAverages()" class="jisuan">计算平均值</button>  
   
   <div class="divv">
-  	<h2>13次测量的数据</h2>  
+  	<h1>13次测量的数据</h1>  
 	<table border="2" align="center" class="table2">  
 	    <tr>  
 	        <th></th>  
@@ -311,7 +316,7 @@ function getColumnData3() {
 	        <th>13</th>  
 	    </tr>  
 	    <tr>  
-	        <td style="font-size:20px;">n</td>  
+	        <td style="font-size:30px;">n</td>  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
@@ -327,7 +332,7 @@ function getColumnData3() {
 	        <td><input type="number"></td>  
 	    </tr>  
 	    <tr>  
-	        <td style="font-size:20px;">T</td>  
+	        <td style="font-size:30px;">T</td>  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
@@ -343,7 +348,7 @@ function getColumnData3() {
 	        <td><input type="number"></td>
 	    </tr>  
 	    <tr>  
-	        <td style="font-size:20px;">▲n</td>  
+	        <td style="font-size:30px;">▲n</td>  
 	        <td><input type="number" readonly value="0"></td> <!-- 第三行第二列直接设为0且只读 -->  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
@@ -359,7 +364,7 @@ function getColumnData3() {
 	        <td><input type="number"></td>
 	    </tr>
 	    <tr>  
-	        <td style="font-size:20px;">▲T</td>  
+	        <td style="font-size:30px;">▲T</td>  
 	        <td><input type="number" readonly value="0"></td> <!-- 第三行第二列直接设为0且只读 -->  
 	        <td><input type="number"></td>  
 	        <td><input type="number"></td>  
@@ -385,7 +390,9 @@ function getColumnData3() {
 <br /><br /><br />
   	<hr /><br />
  <!--  	<img src="img/3.png" />-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  	<img src="1.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	<div>
+  		<div style="width: 40%; float: left;">
+  			<img src="img/1.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!--  	<img src="img/2.png" />-->
   	<!--<p> M= <span id="demo">?</span> .
   		<button onclick="getColumnData()">显示答案</button>  
@@ -395,9 +402,14 @@ function getColumnData3() {
   		<button onclick="getColumnData2()">显示答案</button>
   	</p>
   	-->
-  	<p> α= <span id="demo3"> ?</span> .
-  		<button onclick="getColumnData3()">显示答案</button>
-  	</p>
+  	
+  		</div>
+  		<div style="width: 60%; float: right;">
+  			<p style="font-size: 50px;" align="left"> α= <span id="demo3"> ?</span> .
+		  		<button onclick="getColumnData3()" style="font-size: 30px;">显示答案</button>
+		  	</p>
+  		</div>
+  	</div>
   </div>
 </body>  
 </html>
